@@ -15,3 +15,9 @@
     font-weight: 400;
     font-size: larger;
 }
+
+.navPosition {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}

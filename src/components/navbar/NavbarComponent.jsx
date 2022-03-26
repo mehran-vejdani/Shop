@@ -8,7 +8,7 @@ import shop from "../assets/icons/shopping.svg";
 //end material
 const NavbarComponent = () => {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="light" expand="lg" className={styles.navPosition}>
       <Container>
         <Link to="/products" className={styles.link}>
           products

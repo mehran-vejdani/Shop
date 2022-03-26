@@ -1,0 +1,17 @@
+.cardFlex {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 80px;
+}
+
+.card {
+    width: 17rem;
+    cursor: pointer;
+    margin: 8px;
+}
+
+.card:hover {
+    transition: all 0.5s ease;
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
