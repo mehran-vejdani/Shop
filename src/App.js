@@ -4,12 +4,14 @@ import { Route, Routes, Navigate } from "react-router-dom";
 import NavbarComponent from "./components/navbar/NavbarComponent";
 import Product from "./components/sharedComponents/productComponent/Product";
 //end component
+//context
+import ProductContextProvider from "./components/context/ProductContextProvider";
 function App() {
   return (
-    <div>
+    <ProductContextProvider>
       <NavbarComponent />
       <Product />
-    </div>
+    </ProductContextProvider>
   );
 }
 
