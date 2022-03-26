@@ -1,8 +1,10 @@
 .cardFlex {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
-    margin-top: 80px;
+}
+
+.flexibility {
+    position: relative;
 }
 
 .card {
@@ -12,6 +14,18 @@
 }
 
 .card:hover {
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
     box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
+
+.cardImage {
+    height: 350px;
+    padding: 10px;
+}
+
+.spinner {
+    text-align: center;
+    position: absolute;
+    top: 20%;
+    right: 50%;
 }
