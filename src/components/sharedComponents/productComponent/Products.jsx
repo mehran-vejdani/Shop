@@ -30,7 +30,7 @@ const Products = ({ productData }) => {
               </Card.Body>
 
               <div>
-                <button variant="primary">Go somewhere</button>
+                <button className="primary">Go somewhere</button>
               </div>
             </Card>
           </div>
