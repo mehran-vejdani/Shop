@@ -6,7 +6,7 @@ const initialState = {
   checkout: false,
 };
 
-const cartReduser = (state, product) => {
+const cartReduser = (state, action) => {
   switch (action.type) {
     case "ADD_ITEM":
       if (!state.seletedItems.find((item) => item.id === action.payload.id)) {

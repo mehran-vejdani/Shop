@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imageSize {
+    width: 200px;
+    margin-top: 25px;
+    cursor: pointer;
+}
+
+.titles {
+    padding: 15px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.price {
+    font-size: larger;
+    font-weight: 900;
+}
+
+.link {
+    text-decoration: none;
+    font-weight: 500;
+}
