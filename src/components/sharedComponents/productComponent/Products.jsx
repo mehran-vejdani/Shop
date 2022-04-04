@@ -1,16 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-//context
-
+//functions
+import { shorten, isIncart, quantityCount } from "../../helper/functions";
 //add material
 import styles from "./product.module.css";
 import { Container, Card, Spinner } from "react-bootstrap";
+import trash from "../../assets/icons/trash.svg";
 //end material
-//functions
-import { shorten } from "../../helper/functions";
+
+//context
+import { CartContext } from "../../context/CartContextProvider";
 const Products = ({ productData }) => {
   const [loading, setLoading] = useState(false);
-  useEffect(() => setLoading(true));
+  useEffect(() => setLoading(true), []);
+  const { state, dispatch } = useContext(CartContext);
   return (
     <div>
       <Container>
@@ -30,7 +33,44 @@ const Products = ({ productData }) => {
               </Card.Body>
 
               <div>
-                <button className="primary">Go somewhere</button>
+                {isIncart(state, productData.id) ? (
+                  <button
+                    onClick={() =>
+                      dispatch({ type: "INCREASE", payload: productData })
+                    }
+                  >
+                    +
+                  </button>
+                ) : (
+                  <button
+                    onClick={() =>
+                      dispatch({ type: "ADD_ITEM", payload: productData })
+                    }
+                  >
+                    Add To Cart
+                  </button>
+                )}
+                {quantityCount(state, productData.id) > 1 && (
+                  <button
+                    onClick={() =>
+                      dispatch({ type: "DECREASE", payload: productData })
+                    }
+                  >
+                    -
+                  </button>
+                )}
+                {quantityCount(state, productData.id) > 0 && (
+                  <span>{quantityCount(state, productData.id)} </span>
+                )}
+                {quantityCount(state, productData.id) === 1 && (
+                  <button
+                    onClick={() =>
+                      dispatch({ type: "REMOVE_ITEM", payload: productData })
+                    }
+                  >
+                    <img src={trash} alt="trash" style={{ width: "13px" }} />
+                  </button>
+                )}
               </div>
             </Card>
           </div>

@@ -4,6 +4,7 @@ import { Route, Routes, Navigate } from "react-router-dom";
 import NavbarComponent from "./components/navbar/NavbarComponent";
 import Store from "./components/sharedComponents/productComponent/Store";
 import ProductDetails from "./components/sharedComponents/productDetails/ProductDetails";
+import ShopCart from "./components/sharedComponents/cart/ShopCart";
 //end component
 //context
 import ProductContextProvider from "./components/context/ProductContextProvider";
@@ -17,6 +18,7 @@ function App() {
           <Route path="/products" element={<Store />} />
           <Route path="*" element={<Navigate to="/products" />} />
           <Route path="/products/:id" element={<ProductDetails />} />
+          <Route path="/cart" element={<ShopCart />} />
         </Routes>
       </CartContextProvider>
     </ProductContextProvider>
