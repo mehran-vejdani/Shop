@@ -17,8 +17,12 @@ const NavbarComponent = () => {
           products
         </Link>
         <div>
-          <img src={shop} alt="shopIcon" className={styles.shopIcon} />
-          <span className={styles.shopCount}></span>
+          <Link to="/Cart">
+            {" "}
+            <img src={shop} alt="shopIcon" className={styles.shopIcon} />
+          </Link>
+
+          <span className={styles.shopCount}>{state.itemsCounter}</span>
         </div>
       </Container>
     </Navbar>

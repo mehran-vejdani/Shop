@@ -32,7 +32,7 @@ const Products = ({ productData }) => {
                 <Link to={`/products/${productData.id}`}>Details</Link>
               </Card.Body>
 
-              <div>
+              <div className={styles.btnGroup}>
                 {isIncart(state, productData.id) ? (
                   <button
                     onClick={() =>
@@ -59,17 +59,20 @@ const Products = ({ productData }) => {
                     -
                   </button>
                 )}
-                {quantityCount(state, productData.id) > 0 && (
-                  <span>{quantityCount(state, productData.id)} </span>
-                )}
                 {quantityCount(state, productData.id) === 1 && (
                   <button
                     onClick={() =>
                       dispatch({ type: "REMOVE_ITEM", payload: productData })
                     }
                   >
-                    <img src={trash} alt="trash" style={{ width: "13px" }} />
+                    <img src={trash} alt="trash" className={styles.trashbtn} />
                   </button>
+                )}
+
+                {quantityCount(state, productData.id) > 0 && (
+                  <span className={styles.spancounter}>
+                    {quantityCount(state, productData.id)}
+                  </span>
                 )}
               </div>
             </Card>
